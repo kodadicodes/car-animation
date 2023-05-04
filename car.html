@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .way {
+            height: 500px;
+            width: 889px;
+            background: url(arka.jpg);
+            position: absolute;
+            background-size: cover;
+
+            /* Animasyon adını belirtir */
+            animation-name: way;
+            /* Animasyon süresini belirtir */
+            animation-duration: 2s;
+            /* Animasyon tekrar sayısını belirtir (sonsuz) */
+            animation-iteration-count: infinite;
+            /* Animasyon zamanlama işlevini belirtir (her zaman aynı) */
+            animation-timing-function: linear;
+            /* Animasyon yönünü tersine çevirir */
+            animation-direction: reverse;
+        }
+
+        .car {
+            height: 150px;
+            width: 420px;
+            background: url(arac.png);
+            position: absolute;
+            top: 245px;
+            left: 80px;
+        }
+
+        .wheel {
+            position: absolute;
+            background: url(teker.png);
+            height: 64px;
+            width: 64px;
+            top: 84px;
+            left: 42px;
+
+            animation-name: wheel;
+            animation-direction: normal;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        /* İlk .wheel elementini konumlandır */
+        .wheel:nth-child(1) {
+            left: 42px;
+        }
+
+        /* İkinci .wheel elementini konumlandır */
+        .wheel:nth-child(2) {
+            left: 310px;
+        }
+
+        @keyframes wheel {
+            from {}/*ilk durum*/
+
+            to {
+                /* Son durumda elementi 360 derece döndür */
+                transform: rotate(360deg);
+            }
+        }
+
+        /* way animasyonunu tanımla */
+        @keyframes way {
+            from {}
+
+            to {
+                /* Son durumda arka plan pozisyonunu değiştir */
+                background-position: 889px 0;/*sırasıyla x ve y*/
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="way">
+        <div class="car">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+        </div>
+    </div>
+</body>
+
+</html>
